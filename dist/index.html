@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visual Studio Code - Code Editing. Redefined</title>
+    <link
+      rel="shortcut icon"
+      href="https://res.cloudinary.com/samaxy50/image/upload/v1734332298/favicon.ico"
+      type="image/x-icon"
+    />
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body
+    class="bg-white dark:bg-bgBlack text-lightModeText dark:text-darkModeText fill-lightModeText dark:fill-darkModeText w-full box-border relative"
+  >
+    <div class="w-full relative">
+      <header
+        class="w-full fixed left-0 top-0 bg-white dark:bg-bgBlack border-b z-50 border-b-transparent flex items-center justify-center"
+      >
+        <div
+          class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 lg:flex hidden items-center justify-between gap-5 h-15"
+        >
+          <div class="flex items-center gap-6">
+            <a href="index.html" class="flex items-center gap-3">
+              <img
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734332306/logo.png"
+                alt="Visual Studio Code"
+                class="xl:size-6 size-5"
+              />
+              <span
+                class="text-lightModeHeading dark:text-darkModeHeading xl:text-xl text-lg font-semibold"
+                >Visual Studio Code</span
+              >
+            </a>
+
+            <nav class="flex items-center gap-6">
+              <a
+                href="https://code.visualstudio.com/docs"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >Docs</a
+              >
+              <a
+                href="https://code.visualstudio.com/updates"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >Updates</a
+              >
+              <a
+                href="https://code.visualstudio.com/blogs"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >Blog</a
+              >
+              <a
+                href="https://code.visualstudio.com/api"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >API</a
+              >
+              <a
+                href="https://marketplace.visualstudio.com/VSCode"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >Extensions</a
+              >
+              <a
+                href="https://code.visualstudio.com/docs/supporting/faq"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >FAQ</a
+              >
+            </nav>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button
+              id="dark-mode-btn"
+              class="p-1.5 hover:bg-black/6 dark:hover:bg-white/10 rounded hidden"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                class="size-5"
+              >
+                <path
+                  d="M8.0162 1C8.25723 1 8.45269 1.19588 8.45269 1.4375V2.3125C8.45269 2.55412 8.25723 2.75 8.0162 2.75C7.77514 2.75 7.57971 2.55412 7.57971 2.3125V1.4375C7.57971 1.19588 7.77514 1 8.0162 1ZM8.0162 11.5C9.94469 11.5 11.5081 9.93296 11.5081 8C11.5081 6.067 9.94469 4.5 8.0162 4.5C6.08767 4.5 4.5243 6.067 4.5243 8C4.5243 9.93296 6.08767 11.5 8.0162 11.5ZM8.0162 10.625C6.56981 10.625 5.39727 9.44979 5.39727 8C5.39727 6.55026 6.56981 5.375 8.0162 5.375C9.46263 5.375 10.6351 6.55026 10.6351 8C10.6351 9.44979 9.46263 10.625 8.0162 10.625ZM14.5635 8.4375C14.8045 8.4375 15 8.24159 15 8C15 7.75838 14.8045 7.5625 14.5635 7.5625H13.6905C13.4495 7.5625 13.2541 7.75838 13.2541 8C13.2541 8.24159 13.4495 8.4375 13.6905 8.4375H14.5635ZM8.0162 13.25C8.25723 13.25 8.45269 13.4459 8.45269 13.6875V14.5625C8.45269 14.8041 8.25723 15 8.0162 15C7.77514 15 7.57971 14.8041 7.57971 14.5625V13.6875C7.57971 13.4459 7.77514 13.25 8.0162 13.25ZM2.34186 8.4375C2.58292 8.4375 2.77835 8.24159 2.77835 8C2.77835 7.75838 2.58292 7.5625 2.34186 7.5625H1.43649C1.19542 7.5625 1 7.75838 1 8C1 8.24159 1.19542 8.4375 1.43649 8.4375H2.34186ZM2.90619 2.87814C3.07665 2.70728 3.35302 2.70728 3.52347 2.87814L4.39645 3.75314C4.56692 3.924 4.56692 4.201 4.39645 4.37186C4.22599 4.54272 3.94963 4.54272 3.77917 4.37186L2.90619 3.49686C2.73573 3.326 2.73573 3.049 2.90619 2.87814ZM3.52347 13.1219C3.35302 13.2927 3.07665 13.2927 2.90619 13.1219C2.73573 12.951 2.73573 12.674 2.90619 12.5031L3.77917 11.6281C3.94963 11.4573 4.22599 11.4573 4.39645 11.6281C4.56692 11.799 4.56692 12.076 4.39645 12.2469L3.52347 13.1219ZM13.1262 2.87814C12.9558 2.70728 12.6794 2.70728 12.5089 2.87814L11.6359 3.75314C11.4655 3.924 11.4655 4.201 11.6359 4.37186C11.8064 4.54272 12.0828 4.54272 12.2533 4.37186L13.1262 3.49686C13.2967 3.326 13.2967 3.049 13.1262 2.87814ZM12.5089 13.1219C12.6794 13.2927 12.9558 13.2927 13.1262 13.1219C13.2967 12.951 13.2967 12.674 13.1262 12.5031L12.2533 11.6281C12.0828 11.4573 11.8064 11.4573 11.6359 11.6281C11.4655 11.799 11.4655 12.076 11.6359 12.2469L12.5089 13.1219Z"
+                />
+              </svg>
+            </button>
+
+            <button
+              id="light-mode-btn"
+              class="p-1.5 hover:bg-black/6 dark:hover:bg-white/10 rounded hidden"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                class="size-[18px]"
+              >
+                <path
+                  d="M7.61731 3.0153C10.0919 3.21621 12.0398 5.37119 12.0398 8C12.0398 10.7614 9.89041 13 7.23897 13C5.55415 13 4.0713 12.0961 3.21428 10.7271C4.56165 10.3479 6.39833 9.42526 7.20834 7.17555C7.73903 5.70162 7.76926 4.23763 7.61731 3.0153ZM13 8C13 4.68629 10.4207 2 7.23897 2C7.17126 2 7.10381 2.00122 7.03662 2.00364C6.89672 2.00867 6.76589 2.07706 6.67841 2.19089C6.59093 2.30471 6.55551 2.45263 6.58142 2.59591C6.80109 3.81021 6.84948 5.32413 6.3093 6.82444C5.54115 8.95787 3.61893 9.66359 2.39426 9.89533C2.24674 9.92325 2.12022 10.0213 2.05222 10.1605C1.98422 10.2997 1.98255 10.4639 2.04771 10.6046C2.97816 12.6128 4.95255 14 7.23897 14C10.4207 14 13 11.3137 13 8Z"
+                />
+              </svg>
+            </button>
+
+            <form
+              id="search-form"
+              class="xl:flex hidden items-center gap-2 relative"
+            >
+              <input
+                type="text"
+                id="search-input"
+                name="search-input"
+                placeholder="Search Docs"
+                class="w-48 bg-transparent outline-none border-black/15 dark:border-white/15 border rounded pr-2 pl-8 pt-1 pb-1.5 focus:border-buttonBlue text-sm flex items-center placeholder:text-lightModeText dark:placeholder:text-darkModeText"
+              />
+              <button type="submit" class="absolute left-2.5 mt-0.5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  class="size-4"
+                >
+                  <path
+                    d="M9.27531 0C5.96189 0 3.27584 2.68606 3.27584 5.99947C3.27584 7.60086 3.90325 9.0557 4.92567 10.1316L0 15.0573L0.942726 16L5.94933 10.9934C6.90125 11.6286 8.04503 11.9989 9.27531 11.9989C12.5887 11.9989 15.2748 9.31289 15.2748 5.99947C15.2748 2.68606 12.5887 0 9.27531 0ZM4.60905 5.99947C4.60905 3.42237 6.69821 1.33322 9.27531 1.33322C11.8524 1.33322 13.9416 3.42237 13.9416 5.99947C13.9416 8.57658 11.8524 10.6657 9.27531 10.6657C6.69821 10.6657 4.60905 8.57658 4.60905 5.99947Z"
+                  />
+                </svg>
+              </button>
+            </form>
+
+            <a
+              href="https://code.visualstudio.com/Download"
+              class="bg-buttonBlue text-darkModeHeading font-medium leading-none px-4 py-2 rounded transition-all hover:bg-hoverBlue"
+            >
+              Download
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="mobile-header"
+          class="w-full sm:px-10 px-5 lg:hidden flex items-center justify-between gap-5 h-15"
+        >
+          <a href="index.html" class="flex items-center gap-3">
+            <img
+              src="https://res.cloudinary.com/samaxy50/image/upload/v1734332306/logo.png"
+              alt="Visual Studio Code"
+              class="xl:size-6 size-5"
+            />
+            <span
+              class="text-lightModeHeading dark:text-darkModeHeading xl:text-xl text-lg font-semibold"
+              >Visual Studio Code</span
+            >
+          </a>
+
+          <div class="flex items-center justify-center">
+            <button
+              id="popup-open"
+              class="bg-black/1 dark:bg-white/7 rounded p-1.5"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                class="size-5"
+              >
+                <path
+                  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                />
+              </svg>
+            </button>
+
+            <button
+              id="popup-close"
+              class="bg-black/1 dark:bg-white/7 rounded p-1 hidden"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="size-6"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Announcement -->
+      <div
+        id="announcement"
+        class="w-full flex items-center justify-center px-4 pt-20 relative"
+      >
+        <p class="text-sm font-medium text-center leading-[0.85]">
+          <a
+            href="https://code.visualstudio.com/updates"
+            class="text-darkBlue dark:text-linkBlue underline"
+            >Version 1.93</a
+          >
+          is now available! Read about the new features and fixes from August.
+        </p>
+        <button
+          id="close-announcement-btn"
+          class="p-1.5 hover:bg-black/6 dark:hover:bg-white/10 rounded absolute right-4"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="size-[18px]"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Main -->
+      <main class="w-full relative">
+        <section
+          id="hero"
+          class="w-full relative flex flex-col items-center bg-gradient-to-b from-white to-[#f8f8f884] dark:from-bgBlack dark:to-[#141414] border-b border-black/12 dark:border-white/12"
+        >
+          <div
+            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 flex items-center gap-10"
+          >
+            <div class="xl:w-1/3 w-[35%] flex flex-col items-start gap-4">
+              <h3
+                class="bg-black/1 dark:bg-white/4 p-3 rounded-full border border-black/10 dark:border-white/7 text-sm font-medium leading-[0.85] text-nowrap"
+              >
+                Free. Built on open source. Runs everywhere.
+              </h3>
+              <h1
+                class="xl:text-[3.5rem] md:text-[2.9rem] text-4xl leading-tight font-semibold text-lightModeHeading dark:text-darkModeHeading"
+              >
+                Code Editing. Redefined.
+              </h1>
+              <a
+                id="download"
+                href="https://code.visualstudio.com/Download"
+                class="bg-buttonBlue text-darkModeHeading xl:text-lg text-base font-medium xl:px-6 px-5 xl:py-2.5 py-2 rounded transition-all hover:bg-hoverBlue xl:mt-3 mt-2"
+                >Download</a
+              >
+              <div class="text-sm font-medium">
+                <a
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  href="https://vscode.dev/"
+                  >Web</a
+                >,
+                <a
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  href="https://code.visualstudio.com/insiders"
+                  >insiders edition</a
+                ><span>, or</span>
+                <a
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  href="https://code.visualstudio.com/Download"
+                  >other platforms</a
+                >
+              </div>
+
+              <p class="text-xs">
+                By using VS Code, you agree to its
+                <a
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  href="https://code.visualstudio.com/license"
+                  >license</a
+                >
+                and
+                <a
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  href="https://go.microsoft.com/fwlink/?LinkId=521839"
+                  >privacy statement</a
+                >.
+              </p>
+            </div>
+
+            <div class="xl:w-2/3 w-[65%]">
+              <img
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734332300/hero.png"
+                alt="Visual Studio Code"
+                class="w-full object-contain hidden dark:block"
+              />
+              <img
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734332301/home-screenshot-mac-2x-v2-light.png"
+                alt="Visual Studio Code"
+                class="w-full object-contain dark:hidden"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full relative flex flex-col items-center">
+          <div
+            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:py-24 md:py-20 py-15 relative flex gap-10"
+          >
+            <div
+              class="xl:w-1/3 w-[35%] flex flex-col items-start gap-4 xl:pr-10"
+            >
+              <h2
+                class="xl:text-3xl md:text-[1.65rem] text-2xl leading-snug font-semibold text-lightModeHeading dark:text-darkModeHeading"
+              >
+                Code in any language
+              </h2>
+              <p class="font-medium">
+                VS Code supports almost every major programming language.
+                Several ship in the box, like JavaScript, TypeScript, CSS, and
+                HTML, but extensions for others can be found in the VS Code
+                Marketplace.
+              </p>
+            </div>
+
+            <div class="xl:w-2/3 w-[65%] grid grid-cols-3 gap-y-2 gap-x-7">
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332303/js.png"
+                  alt="JavaScript"
+                />
+                <code>JavaScript</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332321/ts.png"
+                  alt="TypeScript"
+                />
+                <code>TypeScript</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332310/py.png"
+                  alt="Python"
+                />
+                <code>Python</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332297/csharp.png"
+                  alt="C#"
+                />
+                <code>C#</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332296/cpp.png"
+                  alt="C++"
+                />
+                <code>C++</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332301/html.png"
+                  alt="HTML"
+                />
+                <code>HTML</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332302/java.png"
+                  alt="Java"
+                />
+                <code>Java</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332304/json.png"
+                  alt="JSON"
+                />
+                <code>JSON</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332308/php.png"
+                  alt="PHP"
+                />
+                <code>PHP</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332307/md.png"
+                  alt="Markdown"
+                />
+                <code>Markdown</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332309/ps.png"
+                  alt="PowerShell"
+                />
+                <code>PowerShell</code>
+              </div>
+              <div class="flex items-center gap-2">
+                <img
+                  class="size-10"
+                  src="https://res.cloudinary.com/samaxy50/image/upload/v1734332322/yaml.png"
+                  alt="YAML"
+                />
+                <code>YAML</code>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full relative flex flex-col items-center">
+          <div
+            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 relative flex gap-10"
+          >
+            <div
+              class="xl:w-1/3 w-[35%] flex flex-col items-start gap-4 xl:pr-10"
+            >
+              <h2
+                class="xl:text-3xl md:text-[1.65rem] text-2xl leading-snug font-semibold text-lightModeHeading dark:text-darkModeHeading"
+              >
+                Code with extensions
+              </h2>
+              <p class="font-medium">
+                Whether you're a beginner or an expert, we've got you covered.
+                Choose from hundreds of extensions to power up your VS Code
+                experience.
+              </p>
+              <a
+                class="text-darkBlue dark:text-linkBlue underline -mt-1 font-medium"
+                href="https://code.visualstudio.com/docs/editor/extension-marketplace"
+                >Learn more about extensions</a
+              >
+            </div>
+
+            <div
+              class="xl:w-2/3 w-[65%] relative flex flex-col items-center xl:gap-5 gap-3"
+            >
+              <div class="extensions w-full hidden xl:grid grid-cols-3 gap-4">
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"
+                  class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+                >
+                  <img
+                    class="size-10 rounded"
+                    src="https://res.cloudinary.com/samaxy50/image/upload/v1734332311/python-extension.png"
+                    alt="Python"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                    >
+                      Python
+                    </h3>
+                    <p class="text-sm font-medium">
+                      Adds rich language support for Python
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot"
+                  class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+                >
+                  <img
+                    class="size-10 rounded"
+                    src="https://res.cloudinary.com/samaxy50/image/upload/v1734332296/copilot-extension.png"
+                    alt="GitHub Copilot"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                    >
+                      GitHub Copilot
+                    </h3>
+                    <p class="text-sm font-medium">Your AI pair programmer</p>
+                  </div>
+                </a>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools"
+                  class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+                >
+                  <img
+                    class="size-10 rounded"
+                    src="https://res.cloudinary.com/samaxy50/image/upload/v1734332296/c-extension.png"
+                    alt="C/C++"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                    >
+                      C/C++
+                    </h3>
+                    <p class="text-sm font-medium">
+                      Adds rich language support for C/C++
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter"
+                  class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+                >
+                  <img
+                    class="size-10 rounded"
+                    src="https://res.cloudinary.com/samaxy50/image/upload/v1734332305/jupyter-extension.png"
+                    alt="Jupyter"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                    >
+                      Jupyter
+                    </h3>
+                    <p class="text-sm font-medium">
+                      Language support for Jupyter Notebooks
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens"
+                  class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+                >
+                  <img
+                    class="size-10 rounded"
+                    src="https://res.cloudinary.com/samaxy50/image/upload/v1734332299/gitlens-extension.png"
+                    alt="GitLens"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                    >
+                      GitLens
+                    </h3>
+                    <p class="text-sm font-medium">
+                      Supercharge your Git experience
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit"
+                  class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+                >
+                  <img
+                    class="size-10 rounded"
+                    src="https://res.cloudinary.com/samaxy50/image/upload/v1734332297/cs-dev-kit-extension.png"
+                    alt="C# Dev Kit"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                    >
+                      C# Dev Kit
+                    </h3>
+                    <p class="text-sm font-medium">
+                      Powerful tools for your C# environment
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces"
+                  class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+                >
+                  <img
+                    class="size-10 rounded"
+                    src="https://res.cloudinary.com/samaxy50/image/upload/v1734332299/github-pull-requests-extension.png"
+                    alt="GitHub Codespaces"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                    >
+                      GitHub Codespaces
+                    </h3>
+                    <p class="text-sm font-medium">
+                      Fully configured dev environments in the cloud
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github"
+                  class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+                >
+                  <img
+                    class="size-10 rounded"
+                    src="https://res.cloudinary.com/samaxy50/image/upload/v1734332299/github-pull-requests-extension.png"
+                    alt="GitHub Pull Requests"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                    >
+                      GitHub Pull Requests
+                    </h3>
+                    <p class="text-sm font-medium">
+                      Collaborate on issues and pull requests
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack"
+                  class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+                >
+                  <img
+                    class="size-10 rounded"
+                    src="https://res.cloudinary.com/samaxy50/image/upload/v1734332313/remote-extension.png"
+                    alt="Remote Development"
+                  />
+                  <div class="flex flex-col gap-1">
+                    <h3
+                      class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                    >
+                      Remote Development
+                    </h3>
+                    <p class="text-sm font-medium">
+                      Open folders in a container on a remote machine
+                    </p>
+                  </div>
+                </a>
+              </div>
+
+              <p class="text-[13px] font-medium">
+                View 50k+ extensions in the
+                <a
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  href="https://marketplace.visualstudio.com/vscode"
+                  >Extension Marketplace</a
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full relative flex flex-col items-center">
+          <div
+            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 relative flex gap-10"
+          >
+            <div
+              class="xl:w-1/3 w-[35%] flex flex-col items-start xl:gap-8 gap-4 xl:pr-10"
+            >
+              <div class="flex flex-col gap-4">
+                <h2
+                  class="xl:text-3xl md:text-[1.65rem] text-2xl leading-snug font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Code with GitHub Copilot
+                </h2>
+                <p class="font-medium">
+                  Write code faster and smarter with GitHub Copilot, your AI
+                  pair programmer.
+                </p>
+                <a
+                  class="text-darkBlue dark:text-linkBlue underline font-medium -mt-1"
+                  href="https://github.com/settings/copilot?utm_source=vscode-landing-2&utm_medium=swim&utm_campaign=2024q3-em-MSFT-signup"
+                  >Try GitHub Copilot free for 30 days</a
+                >
+              </div>
+
+              <p class="font-medium">
+                <a
+                  href="https://code.visualstudio.com/docs/copilot/ai-powered-suggestions"
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  >Completions</a
+                >
+                present suggestions automatically to help you code more
+                efficiently.
+              </p>
+              <p class="font-medium">
+                <a
+                  href="https://code.visualstudio.com/docs/copilot/copilot-chat"
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  >Copilot Chat</a
+                >
+                understands the context of your code, workspace, extensions,
+                settings, and more.
+              </p>
+              <p class="font-medium">
+                <a
+                  href="https://code.visualstudio.com/docs/copilot/getting-started#_refactor-your-code-through-ai-chat"
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  >Inline Chat</a
+                >
+                enables you to iteratively generate edits and get answers to
+                quick questions, directly on your code.
+              </p>
+            </div>
+
+            <div class="xl:w-2/3 w-[65%] relative">
+              <img
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734332316/swimlane-copilot.png"
+                alt="GitHub Copilot suggesting a code change"
+                class="w-full object-contain hidden dark:block"
+              />
+              <img
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734332317/swimlane-copilot-light.png"
+                alt="GitHub Copilot suggesting a code change"
+                class="w-full object-contain dark:hidden"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full relative flex flex-col items-center">
+          <div
+            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 relative flex gap-10"
+          >
+            <div
+              class="xl:w-1/3 w-[35%] flex flex-col items-start xl:gap-8 gap-4 xl:pr-10"
+            >
+              <div class="flex flex-col gap-4">
+                <h2
+                  class="xl:text-3xl md:text-[1.65rem] text-2xl leading-snug font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Code fully customized
+                </h2>
+                <p class="font-medium">
+                  Customize your VS Code UI and layout so that it fits your
+                  coding style.
+                </p>
+              </div>
+
+              <p class="font-medium">
+                <a
+                  href="https://code.visualstudio.com/docs/getstarted/themes"
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  >Color themes</a
+                >
+                let you modify the colors in VS Code's user interface to suit
+                your preferences and work environment.
+              </p>
+              <p class="font-medium">
+                <a
+                  href="https://code.visualstudio.com/docs/getstarted/settings#_settings-sync"
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  >Settings Sync</a
+                >
+                enables you to share your user settings across your VS Code
+                instances with the Settings Sync feature.
+              </p>
+              <p class="font-medium">
+                <a
+                  href="https://code.visualstudio.com/docs/editor/profiles"
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  >Profiles</a
+                >
+                let you create sets of customizations and quickly switch between
+                them or share them with others.
+              </p>
+            </div>
+
+            <div class="xl:w-2/3 w-[65%] relative">
+              <img
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734332319/swimlane-customized.png"
+                alt="Selecting the GitHub Dark theme with a quick pick"
+                class="w-full object-contain hidden dark:block"
+              />
+              <img
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734332321/swimlane-customized-light.png"
+                alt="Selecting the GitHub Dark theme with a quick pick"
+                class="w-full object-contain dark:hidden"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full relative flex flex-col items-center">
+          <div
+            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 relative flex gap-10"
+          >
+            <div
+              class="xl:w-1/3 w-[35%] flex flex-col items-start xl:gap-8 gap-4 xl:pr-10"
+            >
+              <div class="flex flex-col gap-4">
+                <h2
+                  class="xl:text-3xl md:text-[1.65rem] text-2xl leading-snug font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Code anywhere
+                </h2>
+                <p class="font-medium">
+                  Code wherever you're most productive, whether you're connected
+                  to the cloud, a remote repository, or in the browser with VS
+                  Code for the Web (vscode.dev).
+                </p>
+              </div>
+
+              <p class="font-medium">
+                <a
+                  href="https://code.visualstudio.com/docs/sourcecontrol/overview"
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  >Built-in Source Control</a
+                >
+                empowers you with Git support out-of-the-box. Many other source
+                control providers are available through extensions.
+              </p>
+              <p class="font-medium">
+                <a
+                  href="https://code.visualstudio.com/docs/remote/codespaces"
+                  class="text-darkBlue dark:text-linkBlue underline"
+                  >GitHub Codespaces</a
+                >
+                provides cloud-powered development environments for any activity
+                - whether it's a long-term project, or a short-term task like
+                reviewing a pull request.
+              </p>
+            </div>
+
+            <div class="xl:w-2/3 w-[65%] relative">
+              <img
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734332314/swimlane-anywhere.png"
+                alt="vscode.dev in an Edge browser tab"
+                class="w-full object-contain hidden dark:block"
+              />
+              <img
+                src="https://res.cloudinary.com/samaxy50/image/upload/v1734332315/swimlane-anywhere-light.png"
+                alt="vscode.dev in an Edge browser tab"
+                class="w-full object-contain dark:hidden"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full relative flex flex-col items-center">
+          <div
+            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 relative flex flex-col xl:gap-15 gap-10"
+          >
+            <div class="flex flex-col items-center text-center xl:gap-4 gap-3">
+              <h2
+                class="xl:text-3xl md:text-[1.65rem] text-2xl leading-snug font-semibold text-lightModeHeading dark:text-darkModeHeading"
+              >
+                Code with rich features
+              </h2>
+              <p
+                class="font-medium w-full xl:max-w-[41%] sm:max-w-[60%] max-w-[90%]"
+              >
+                There's a lot more to an editor. Whether it's using built-in
+                features or rich extensions, there's something for everyone.
+              </p>
+            </div>
+
+            <div class="w-full relative grid grid-cols-4 gap-4">
+              <a
+                href="https://code.visualstudio.com/docs/terminal/basics"
+                class="flex flex-col items-start xl:gap-5 gap-4 xl:p-6 p-4 bg-black/1 dark:bg-white/4 rounded-lg border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+              >
+                <div
+                  class="xl:p-3 p-2.5 rounded-md bg-black/4 dark:bg-white/7 fill-linkBlue"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 56 56"
+                    class="xl:size-6 size-5"
+                  >
+                    <path
+                      d="M4.10667 0.0533333L0.0533333 3.89333V51.8933L4.10667 55.9467H52.1067L55.9467 51.8933V3.89333L52.1067 0.0533333H4.10667ZM4.10667 51.8933V3.89333H52.1067V51.8933H4.10667ZM19.04 41.2267L21.8133 44.2133L35.8933 30.1333V27.7867L21.8133 13.7067L19.04 16.48L31.4133 29.0667L19.04 41.2267Z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Integrated terminal
+                </h3>
+                <p class="text-sm font-medium -mt-2">
+                  Use your favorite shell whether it's zsh, pwsh, or git bash,
+                  all inside the editor.
+                </p>
+              </a>
+              <a
+                href="https://code.visualstudio.com/docs/editor/debugging"
+                class="flex flex-col items-start xl:gap-5 gap-4 xl:p-6 p-4 bg-black/1 dark:bg-white/4 rounded-lg border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+              >
+                <div
+                  class="xl:p-3 p-2.5 rounded-md bg-black/4 dark:bg-white/7 fill-linkBlue"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64"
+                    class="xl:size-6 size-5"
+                  >
+                    <path
+                      d="M29.2267 36.0533L25.6 39.4667C25.0311 37.3333 23.8222 35.5556 21.9733 34.1333C20.2667 32.7111 18.2756 32 16 32C13.7244 32 11.6622 32.7111 9.81333 34.1333C8.10667 35.5556 6.96889 37.3333 6.4 39.4667L2.77333 36.0533L0 38.8267L4.69333 43.3067L4.05333 43.9467V48H0V52.0533H4.05333V52.2667C4.19556 53.5467 4.55111 54.8267 5.12 56.1067L0 61.2267L2.77333 64L7.25333 59.52C8.24889 60.9422 9.52889 62.08 11.0933 62.9333C12.6578 63.6444 14.2933 64 16 64C17.7067 64 19.3422 63.6444 20.9067 62.9333C22.4711 62.08 23.7511 60.9422 24.7467 59.52L29.2267 64L32 61.2267L26.88 55.8933C27.4489 54.7556 27.8044 53.4756 27.9467 52.0533V51.84H32V48H27.9467V43.9467L27.52 43.3067L32 38.8267L29.2267 36.0533ZM16 36.0533C17.7067 36.0533 19.1289 36.6222 20.2667 37.76C21.4044 38.8978 21.9733 40.32 21.9733 42.0267H10.0267C10.0267 40.32 10.5956 38.8978 11.7333 37.76C12.8711 36.6222 14.2933 36.0533 16 36.0533ZM24.1067 52.0533C23.8222 54.1867 22.8978 56.0356 21.3333 57.6C19.9111 59.0222 18.1333 59.8044 16 59.9467C13.8667 59.8044 12.0178 59.0222 10.4533 57.6C9.03111 56.0356 8.24889 54.1867 8.10667 52.0533V46.08H24.1067V52.0533ZM63.36 25.6V29.0133L36.0533 46.2933V41.6L58.6667 27.3067L24.1067 5.33333V30.5067C22.8267 29.6533 21.4756 29.0133 20.0533 28.5867V1.70667L23.04 0L63.36 25.6Z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Run code
+                </h3>
+                <p class="text-sm font-medium -mt-2">
+                  Run and debug your code without leaving your editor.
+                </p>
+              </a>
+              <a
+                href="https://code.visualstudio.com/docs/sourcecontrol/overview"
+                class="flex flex-col items-start xl:gap-5 gap-4 xl:p-6 p-4 bg-black/1 dark:bg-white/4 rounded-lg border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+              >
+                <div
+                  class="xl:p-3 p-2.5 rounded-md bg-black/4 dark:bg-white/7 fill-linkBlue"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 50 65"
+                    class="xl:size-6 size-5"
+                  >
+                    <path
+                      d="M49.1067 21.9733C49.1067 20.1244 48.6089 18.4178 47.6133 16.8533C46.6178 15.1467 45.2667 13.8667 43.56 13.0133C41.8533 12.16 40.0756 11.8044 38.2267 11.9467C36.3778 12.0889 34.6711 12.7289 33.1067 13.8667C31.5422 15.0044 30.4044 16.4978 29.6933 18.3467C29.1244 20.0533 28.9822 21.8311 29.2667 23.68C29.5511 25.5289 30.3333 27.1644 31.6133 28.5867C32.8933 29.8667 34.4578 30.7911 36.3067 31.36C35.5956 32.7822 34.6 33.92 33.32 34.7733C32.04 35.4844 30.6178 35.84 29.0533 35.84H21.16C18.0311 35.84 15.3289 36.9067 13.0533 39.04V19.6267C15.6133 19.2 17.6044 17.9911 19.0267 16C20.5911 13.8667 21.2311 11.52 20.9467 8.96C20.8044 6.4 19.7378 4.26667 17.7467 2.56C15.8978 0.853333 13.6933 0 11.1333 0C8.57333 0 6.29778 0.853333 4.30667 2.56C2.45778 4.26667 1.39111 6.4 1.10667 8.96C0.964444 11.52 1.60444 13.8667 3.02667 16C4.59111 17.9911 6.65333 19.2 9.21333 19.6267V43.9467C6.65333 44.5156 4.59111 45.7956 3.02667 47.7867C1.46222 49.7778 0.751111 52.0533 0.893333 54.6133C1.17778 57.1733 2.17333 59.3778 3.88 61.2267C5.72889 62.9333 7.93333 63.8578 10.4933 64C13.0533 64.1422 15.3289 63.4311 17.32 61.8667C19.3111 60.3022 20.52 58.24 20.9467 55.68C21.3733 53.12 20.9467 50.7733 19.6667 48.64C18.3867 46.5067 16.4667 45.0844 13.9067 44.3733C14.6178 42.9511 15.6133 41.8844 16.8933 41.1733C18.1733 40.32 19.5956 39.8933 21.16 39.8933H29.0533C31.6133 39.8933 33.8889 39.1822 35.88 37.76C38.0133 36.1956 39.5067 34.2044 40.36 31.7867C42.7778 31.5022 44.84 30.4356 46.5467 28.5867C48.2533 26.5956 49.1067 24.3911 49.1067 21.9733ZM5.16 10.0267C5.16 8.32 5.72889 6.89778 6.86667 5.76C8.00444 4.62222 9.42667 4.05333 11.1333 4.05333C12.84 4.05333 14.2622 4.62222 15.4 5.76C16.5378 6.89778 17.1067 8.32 17.1067 10.0267C17.1067 11.5911 16.5378 13.0133 15.4 14.2933C14.2622 15.4311 12.84 16 11.1333 16C9.42667 16 8.00444 15.4311 6.86667 14.2933C5.72889 13.0133 5.16 11.5911 5.16 10.0267ZM17.1067 53.76C17.1067 55.4667 16.5378 56.8889 15.4 58.0267C14.2622 59.1644 12.84 59.7333 11.1333 59.7333C9.42667 59.7333 8.00444 59.1644 6.86667 58.0267C5.72889 56.8889 5.16 55.5378 5.16 53.9733C5.16 52.2667 5.72889 50.8444 6.86667 49.7067C8.00444 48.4267 9.42667 47.7867 11.1333 47.7867C12.84 47.7867 14.2622 48.4267 15.4 49.7067C16.5378 50.8444 17.1067 52.1956 17.1067 53.76ZM39.08 27.9467C37.3733 27.9467 35.9511 27.3778 34.8133 26.24C33.6756 24.96 33.1067 23.5378 33.1067 21.9733C33.1067 20.2667 33.6756 18.8444 34.8133 17.7067C35.9511 16.5689 37.3022 16 38.8667 16C40.5733 16 41.9956 16.5689 43.1333 17.7067C44.4133 18.8444 45.0533 20.2667 45.0533 21.9733C45.0533 23.5378 44.4133 24.96 43.1333 26.24C41.9956 27.3778 40.6444 27.9467 39.08 27.9467Z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Version control
+                </h3>
+                <p class="text-sm font-medium -mt-2">
+                  Built-in support for git and many other source control
+                  providers.
+                </p>
+              </a>
+              <a
+                href="https://code.visualstudio.com/docs/editor/tasks"
+                class="flex flex-col items-start xl:gap-5 gap-4 xl:p-6 p-4 bg-black/1 dark:bg-white/4 rounded-lg border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+              >
+                <div
+                  class="xl:p-3 p-2.5 rounded-md bg-black/4 dark:bg-white/7 fill-linkBlue"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 57 57"
+                    class="xl:size-6 size-5"
+                  >
+                    <path
+                      d="M56.0933 9.86666L52.8933 9.22667L44.5733 17.5467L39.6667 12.64L47.9867 4.10667L47.3467 0.906666C45.4978 0.337777 43.5778 0.0533333 41.5867 0.0533333C39.7378 0.0533333 37.8889 0.48 36.04 1.33333C34.1911 2.04444 32.5556 3.11111 31.1333 4.53333C29.7111 5.95555 28.5733 7.66222 27.72 9.65333C27.0089 11.5022 26.6533 13.4933 26.6533 15.6267C26.6533 17.6178 27.0089 19.5378 27.72 21.3867C19.4711 29.6356 11.2933 37.9556 3.18667 46.3467C2.33333 47.4844 1.90667 48.8356 1.90667 50.4C2.04889 51.8222 2.68889 53.0311 3.82667 54.0267C4.39556 54.5956 4.96444 55.0933 5.53333 55.52C6.24444 55.8044 6.95556 55.9467 7.66667 55.9467C8.94667 55.9467 10.0844 55.4489 11.08 54.4533C14.0667 51.7511 18.12 47.7689 23.24 42.5067C28.0756 37.8133 32.3422 33.5467 36.04 29.7067C37.8889 30.56 39.8089 30.9867 41.8 30.9867C43.7911 30.9867 45.7111 30.6311 47.56 29.92C49.4089 29.0667 51.0444 27.9289 52.4667 26.5067C53.8889 24.9422 54.9556 23.2356 55.6667 21.3867C56.52 19.5378 56.9467 17.6178 56.9467 15.6267C56.9467 13.6356 56.6622 11.7156 56.0933 9.86666ZM8.73333 51.68C8.59111 51.8222 8.37778 51.8933 8.09333 51.8933H7.66667C7.38222 51.8933 7.16889 51.8933 7.02667 51.8933C6.88444 51.7511 6.67111 51.5378 6.38667 51.2533C6.24444 50.9689 6.10222 50.6133 5.96 50.1867C5.81778 49.76 5.81778 49.4044 5.96 49.12C11.9333 42.8622 19.8978 34.7556 29.8533 24.8C30.28 25.3689 30.7067 25.9378 31.1333 26.5067C31.56 26.9333 32.0578 27.36 32.6267 27.7867C22.2444 38.4533 14.28 46.4178 8.73333 51.68ZM53.1067 15.4133C53.2489 18.6844 52.1822 21.4578 49.9067 23.7333C47.6311 25.8667 44.9289 26.9333 41.8 26.9333C38.6711 26.9333 36.04 25.8667 33.9067 23.7333C32.2 22.0267 31.1333 20.0356 30.7067 17.76C30.28 15.4844 30.4933 13.28 31.3467 11.1467C31.9156 9.72444 32.6978 8.44444 33.6933 7.30666C34.8311 6.16889 36.1111 5.31555 37.5333 4.74667C38.9556 4.17778 40.3778 3.89333 41.8 3.89333H42.8667L35.6133 11.36V14.1333L43.08 21.6H45.8533L53.1067 14.3467V15.4133ZM10.0133 22.6667H15.9867L18.9733 25.6533L21.5333 22.88L18.9733 20.1067L19.1867 13.4933L18.3333 11.7867L6.81333 4.10667L4.46667 4.53333L1.26667 7.73333L0.84 10.2933L8.30667 21.8133L10.0133 22.6667ZM6.17333 8.16L15.3467 14.3467V18.8267H11.08L5.10667 9.44L6.17333 8.16ZM34.5467 36.1067L37.32 33.3333L49.6933 46.1333C50.8311 47.2711 51.4 48.6222 51.4 50.1867C51.4 51.7511 50.8311 53.1022 49.6933 54.24C48.84 55.0933 47.8444 55.6622 46.7067 55.9467C45.7111 56.0889 44.6444 55.9467 43.5067 55.52C42.7956 55.2356 42.2267 54.8089 41.8 54.24L29.2133 41.44L31.9867 38.6667L44.36 51.4667C44.6444 51.7511 44.9289 51.9644 45.2133 52.1067C45.64 52.2489 45.9956 52.2489 46.28 52.1067C46.7067 51.9644 46.9911 51.8222 47.1333 51.68C47.2756 51.3956 47.3467 51.1822 47.3467 51.04C47.4889 50.7556 47.56 50.4711 47.56 50.1867C47.56 49.9022 47.4889 49.6889 47.3467 49.5467C47.3467 49.2622 47.2756 49.0489 47.1333 48.9067L34.5467 36.1067Z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Build tasks
+                </h3>
+                <p class="text-sm font-medium -mt-2">
+                  Run tools and analyze their results from within VS Code.
+                </p>
+              </a>
+              <a
+                href="https://code.visualstudio.com/updates/v1_66#_local-history"
+                class="flex flex-col items-start xl:gap-5 gap-4 xl:p-6 p-4 bg-black/1 dark:bg-white/4 rounded-lg border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+              >
+                <div
+                  class="xl:p-3 p-2.5 rounded-md bg-black/4 dark:bg-white/7 fill-linkBlue"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 57 58"
+                    class="xl:size-6 size-5"
+                  >
+                    <path
+                      d="M49.9733 46.28C52.5333 43.0089 54.24 39.3822 55.0933 35.4C56.0889 31.2756 56.16 27.2222 55.3067 23.24C54.4533 19.1156 52.7467 15.4178 50.1867 12.1467C47.4844 8.44889 44 5.60444 39.7333 3.61333C35.4667 1.62222 30.9867 0.768889 26.2933 1.05333C21.7422 1.33778 17.4756 2.68889 13.4933 5.10667C9.51111 7.38222 6.38222 10.5111 4.10667 14.4933V4.89333H0.0533333V18.9733L1.97333 20.8933H16.0533V17.0533H7.30667C10.0089 12.2178 13.92 8.80444 19.04 6.81333C24.16 4.68 29.3511 4.39555 34.6133 5.96C39.8756 7.38222 44.1422 10.2978 47.4133 14.7067C50.6844 19.1156 52.2489 24.0933 52.1067 29.64C51.9644 35.0444 50.1156 39.88 46.56 44.1467C43.1467 48.4133 38.7378 51.1867 33.3333 52.4667C28.0711 53.7467 22.9511 53.2489 17.9733 50.9733C12.9956 48.5556 9.22667 44.9289 6.66667 40.0933L3.25333 42.0133C5.38667 46.1378 8.44444 49.5511 12.4267 52.2533C16.4089 54.9556 20.7467 56.52 25.44 56.9467C30.1333 57.3733 34.6844 56.6622 39.0933 54.8133C43.5022 52.8222 47.1289 49.9778 49.9733 46.28ZM36.5333 42.44L39.52 39.6667L28 28.1467V13H23.9467V29L24.5867 30.4933L36.5333 42.44Z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Local history
+                </h3>
+                <p class="text-sm font-medium -mt-2">
+                  Never lose your changes with automatically tracked local
+                  history.
+                </p>
+              </a>
+              <a
+                href="https://code.visualstudio.com/docs/getstarted/themes"
+                class="flex flex-col items-start xl:gap-5 gap-4 xl:p-6 p-4 bg-black/1 dark:bg-white/4 rounded-lg border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+              >
+                <div
+                  class="xl:p-3 p-2.5 rounded-md bg-black/4 dark:bg-white/7 fill-linkBlue"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 57 57"
+                    class="xl:size-6 size-5"
+                  >
+                    <path
+                      d="M28 1.05333C24.3022 1.05333 20.7467 1.76444 17.3333 3.18666C13.92 4.60889 10.8622 6.67111 8.16 9.37333C5.6 11.9333 3.60889 14.92 2.18667 18.3333C0.764445 21.7467 0.0533333 25.3022 0.0533333 29V30.7067C0.195556 32.6978 0.906667 34.1911 2.18667 35.1867C3.60889 36.04 5.24444 36.3244 7.09333 36.04C8.94222 35.7556 10.5778 34.9733 12 33.6933C13.4222 32.2711 15.1289 31.6311 17.12 31.7733C19.1111 31.7733 20.8178 32.4844 22.24 33.9067C23.6622 35.3289 24.3733 37.0356 24.3733 39.0267C24.5156 40.8756 23.8756 42.5822 22.4533 44.1467C21.0311 45.5689 20.1778 47.2756 19.8933 49.2667C19.7511 51.2578 20.1778 53.0356 21.1733 54.6C22.1689 56.0222 23.7333 56.8044 25.8667 56.9467H28.2133C33.1911 56.9467 37.8133 55.6667 42.08 53.1067C46.4889 50.5467 49.9022 47.1333 52.32 42.8667C54.88 38.6 56.16 33.9778 56.16 29C56.16 23.88 54.88 19.1867 52.32 14.92C49.9022 10.6533 46.4889 7.24 42.08 4.68C37.8133 2.12 33.1911 0.84 28.2133 0.84L28 1.05333ZM28 53.1067H25.8667C25.2978 52.9644 24.8 52.7511 24.3733 52.4667C24.0889 52.1822 23.9467 51.7556 23.9467 51.1867C23.6622 49.48 24.0889 48.0578 25.2267 46.92C27.36 44.6444 28.4267 42.0133 28.4267 39.0267C28.4267 35.8978 27.2889 33.1956 25.0133 30.92C22.88 28.6444 20.2489 27.5067 17.12 27.5067C13.9911 27.5067 11.2889 28.6444 9.01333 30.92C8.01778 32.0578 6.80889 32.4844 5.38667 32.2C5.10222 32.2 4.81778 32.0578 4.53333 31.7733C4.24889 31.4889 4.10667 31.1333 4.10667 30.7067V29.2133C4.10667 24.8044 5.17333 20.8222 7.30667 17.2667C9.58222 13.5689 12.4978 10.6533 16.0533 8.52C19.7511 6.24444 23.7333 5.10667 28 5.10667C32.4089 5.10667 36.4622 6.24444 40.16 8.52C43.8578 10.6533 46.7733 13.5689 48.9067 17.2667C51.04 20.8222 52.1067 24.8044 52.1067 29.2133C52.1067 33.48 51.04 37.4622 48.9067 41.16C46.7733 44.8578 43.8578 47.7733 40.16 49.9067C36.4622 52.04 32.48 53.1067 28.2133 53.1067H28ZM32.0533 13C32.0533 14.1378 31.6267 15.1333 30.7733 15.9867C30.0622 16.6978 29.1378 17.0533 28 17.0533C26.8622 17.0533 25.8667 16.6978 25.0133 15.9867C24.3022 15.1333 23.9467 14.1378 23.9467 13C23.9467 11.8622 24.3022 10.9378 25.0133 10.2267C25.8667 9.37333 26.8622 8.94667 28 8.94667C29.1378 8.94667 30.0622 9.37333 30.7733 10.2267C31.6267 10.9378 32.0533 11.8622 32.0533 13ZM44 40.9467C44 42.0844 43.5733 43.08 42.72 43.9333C42.0089 44.6444 41.0844 45 39.9467 45C38.8089 45 37.8133 44.6444 36.96 43.9333C36.2489 43.08 35.8933 42.1556 35.8933 41.16C36.0356 40.0222 36.4622 39.0978 37.1733 38.3867C37.8844 37.5333 38.8089 37.1067 39.9467 37.1067C41.0844 37.1067 42.0089 37.5333 42.72 38.3867C43.5733 39.0978 44 39.9511 44 40.9467ZM16.0533 21.1067C17.1911 21.1067 18.1156 20.7511 18.8267 20.04C19.68 19.1867 20.0356 18.1911 19.8933 17.0533C19.8933 15.9156 19.5378 14.9911 18.8267 14.28C18.1156 13.4267 17.1911 13 16.0533 13C14.9156 13 13.92 13.4267 13.0667 14.28C12.3556 14.9911 12 15.9156 12 17.0533C12 18.1911 12.3556 19.1867 13.0667 20.04C13.92 20.7511 14.9156 21.1067 16.0533 21.1067ZM44 17.0533C44 18.1911 43.5733 19.1867 42.72 20.04C42.0089 20.7511 41.0844 21.1067 39.9467 21.1067C38.8089 21.1067 37.8133 20.7511 36.96 20.04C36.2489 19.1867 35.8933 18.1911 35.8933 17.0533C36.0356 15.9156 36.4622 14.9911 37.1733 14.28C37.8844 13.4267 38.8089 13 39.9467 13C41.0844 13 42.0089 13.4267 42.72 14.28C43.5733 14.9911 44 15.9156 44 17.0533ZM48.0533 29C48.0533 30.1378 47.6267 31.1333 46.7733 31.9867C46.0622 32.6978 45.1378 33.0533 44 33.0533C42.8622 33.0533 41.8667 32.6978 41.0133 31.9867C40.3022 31.1333 39.9467 30.1378 39.9467 29C39.9467 27.8622 40.3022 26.9378 41.0133 26.2267C41.8667 25.3733 42.8622 24.9467 44 24.9467C45.1378 24.9467 46.0622 25.3733 46.7733 26.2267C47.6267 26.9378 48.0533 27.8622 48.0533 29Z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Themes
+                </h3>
+                <p class="text-sm font-medium -mt-2">
+                  Your theme is an extension of your personality. Add some flair
+                  to your editor and add your touch.
+                </p>
+              </a>
+              <a
+                href="https://code.visualstudio.com/docs/editor/accessibility"
+                class="flex flex-col items-start xl:gap-5 gap-4 xl:p-6 p-4 bg-black/1 dark:bg-white/4 rounded-lg border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+              >
+                <div
+                  class="xl:p-3 p-2.5 rounded-md bg-black/4 dark:bg-white/7 fill-linkBlue"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 57 37"
+                    class="xl:size-6 size-5"
+                  >
+                    <path
+                      d="M48.1067 0.946667H3.94667C2.80889 0.946667 1.88444 1.37333 1.17333 2.22667C0.462222 2.93778 0.106667 3.86222 0.106667 5V32.9467C0.106667 34.0844 0.462222 35.08 1.17333 35.9333C1.88444 36.6444 2.80889 37 3.94667 37H48.1067C49.1022 37 49.9556 36.6444 50.6667 35.9333C51.52 35.08 51.9467 34.0844 51.9467 32.9467V5C51.9467 3.86222 51.52 2.93778 50.6667 2.22667C49.9556 1.37333 49.1022 0.946667 48.1067 0.946667ZM48.1067 32.9467H3.94667V5H48.1067V32.9467ZM35.9467 9.05333H32.1067V12.8933H35.9467V9.05333ZM32.1067 16.9467H28.0533V21H32.1067V16.9467ZM40 9.05333H44.0533V12.8933H40V9.05333ZM44.0533 25.0533H40V28.8933H44.0533V25.0533ZM16.1067 25.0533H35.9467V28.8933H16.1067V25.0533ZM44.0533 16.9467H35.9467V21H44.0533V16.9467ZM24 9.05333H28.0533V12.8933H24V9.05333ZM24 16.9467H19.9467V21H24V16.9467ZM8 25.0533H12.0533V28.8933H8V25.0533ZM8 9.05333H12.0533V12.8933H8V9.05333ZM19.9467 9.05333H16.1067V12.8933H19.9467V9.05333ZM8 16.9467H16.1067V21H8V16.9467Z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Accessibility
+                </h3>
+                <p class="text-sm font-medium -mt-2">
+                  Optimized experience for screen readers, high contrast themes,
+                  and keyboard-only navigation.
+                </p>
+              </a>
+              <a
+                href="https://code.visualstudio.com/docs/editor/vscode-web"
+                class="flex flex-col items-start xl:gap-5 gap-4 xl:p-6 p-4 bg-black/1 dark:bg-white/4 rounded-lg border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
+              >
+                <div
+                  class="xl:p-3 p-2.5 rounded-md bg-black/4 dark:bg-white/7 fill-linkBlue"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 53 52"
+                    class="xl:size-6 size-5"
+                  >
+                    <path
+                      d="M26.92 0.0533333C31.6133 0.0533333 35.9511 1.26222 39.9333 3.68C43.9156 5.95555 47.0444 9.08444 49.32 13.0667C51.7378 17.0489 52.9467 21.3867 52.9467 26.08C52.9467 30.7733 51.7378 35.1111 49.32 39.0933C47.0444 43.0756 43.9156 46.2044 39.9333 48.48C35.9511 50.7556 31.6133 51.8933 26.92 51.8933C22.2267 51.8933 17.8889 50.7556 13.9067 48.48C9.92444 46.2044 6.72444 43.0756 4.30667 39.0933C2.03111 35.1111 0.893333 30.7733 0.893333 26.08C0.893333 21.3867 2.03111 17.0489 4.30667 13.0667C6.72444 9.08444 9.92444 5.95555 13.9067 3.68C17.8889 1.26222 22.2267 0.0533333 26.92 0.0533333ZM46.5467 16.0533C45.2667 13.4933 43.56 11.2889 41.4267 9.44C39.2933 7.59111 36.9467 6.24 34.3867 5.38667C36.0933 8.65778 37.3733 12.2133 38.2267 16.0533H46.5467ZM48.8933 28C49.0356 27.2889 49.1067 26.6489 49.1067 26.08C48.9644 23.9467 48.68 21.9556 48.2533 20.1067H38.8667C39.0089 21.5289 39.08 22.8089 39.08 23.9467C39.08 26.6489 38.7956 29.3511 38.2267 32.0533H48.2533C48.5378 30.7733 48.7511 29.4222 48.8933 28ZM34.8133 28V27.7867C34.9556 26.5067 35.0267 25.2267 35.0267 23.9467C35.0267 22.6667 34.8844 21.3867 34.6 20.1067H19.24C19.0978 21.3867 19.0267 22.6667 19.0267 23.9467C19.0267 26.6489 19.3111 29.3511 19.88 32.0533H34.1733C34.4578 30.6311 34.6711 29.28 34.8133 28ZM33.96 16.0533C32.9644 11.7867 31.3289 7.80444 29.0533 4.10667H26.92H25C22.5822 7.80444 20.9467 11.7867 20.0933 16.0533H33.96ZM15.8267 16.0533C16.5378 12.2133 17.8178 8.58666 19.6667 5.17333C16.9644 6.16889 14.5467 7.59111 12.4133 9.44C10.4222 11.2889 8.78667 13.4933 7.50667 16.0533H15.8267ZM5.8 19.8933C5.23111 21.8844 4.94667 23.9467 4.94667 26.08C4.94667 28.0711 5.23111 30.0622 5.8 32.0533H15.8267C15.2578 29.3511 14.9733 26.6489 14.9733 23.9467C14.9733 22.8089 15.0444 21.5289 15.1867 20.1067H5.8V19.8933ZM16.8933 35.8933H7.50667C8.92889 39.0222 10.9911 41.5822 13.6933 43.5733C16.3956 45.5644 19.3822 46.9156 22.6533 47.6267C20.0933 44.0711 18.1733 40.2311 16.8933 36.1067V35.8933ZM26.92 46.56C29.48 43.4311 31.4711 39.9467 32.8933 36.1067H21.16C22.44 39.9467 24.36 43.4311 26.92 46.56ZM37.16 35.8933C35.88 40.16 33.96 44.0711 31.4 47.6267C34.6711 46.9156 37.5867 45.5644 40.1467 43.5733C42.8489 41.5822 44.9822 39.0222 46.5467 35.8933H37.16Z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                >
+                  Web support
+                </h3>
+                <p class="text-sm font-medium -mt-2">
+                  Whether you are on your phone, tablet, or desktop, you can
+                  access your code from anywhere.
+                </p>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="w-full relative flex flex-col items-center">
+        <div
+          class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:pb-24 md:pb-20 pb-15 relative flex flex-col gap-4"
+        >
+          <div class="flex gap-5 justify-between items-center">
+            <div class="flex gap-5 items-center">
+              <a
+                href="https://go.microsoft.com/fwlink/?LinkID=533687"
+                class="fill-darkModeText"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 1200 1227"
+                  class="size-[18px]"
+                >
+                  <path
+                    d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/microsoft/vscode"
+                class="fill-darkModeText"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 25"
+                  class="size-6"
+                >
+                  <path
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.7529 2.5C6.08819 2.5 1.5 7.08819 1.5 12.7529C1.5 17.2899 4.4349 21.1219 8.51045 22.4804C9.02309 22.5701 9.21534 22.2625 9.21534 21.9934C9.21534 21.7499 9.20252 20.9425 9.20252 20.0838C6.62647 20.558 5.96003 19.4558 5.75497 18.8791C5.63962 18.5843 5.13979 17.6743 4.70404 17.4308C4.34519 17.2386 3.83254 16.7644 4.69123 16.7516C5.49865 16.7388 6.07537 17.4949 6.26762 17.8025C7.19038 19.3533 8.66424 18.9175 9.25378 18.6484C9.3435 17.9819 9.61264 17.5334 9.90741 17.277C7.62613 17.0207 5.24232 16.1364 5.24232 12.2147C5.24232 11.0997 5.63962 10.1769 6.29325 9.45918C6.19072 9.20286 5.83187 8.15193 6.39578 6.74215C6.39578 6.74215 7.25446 6.47301 9.21534 7.79308C10.0356 7.56239 10.9071 7.44704 11.7786 7.44704C12.6501 7.44704 13.5216 7.56239 14.3418 7.79308C16.3027 6.4602 17.1614 6.74215 17.1614 6.74215C17.7253 8.15193 17.3664 9.20286 17.2639 9.45918C17.9175 10.1769 18.3148 11.0868 18.3148 12.2147C18.3148 16.1492 15.9182 17.0207 13.6369 17.277C14.0086 17.5975 14.329 18.2126 14.329 19.1738C14.329 20.5452 14.3162 21.6474 14.3162 21.9934C14.3162 22.2625 14.5084 22.5829 15.0211 22.4804C17.0565 21.7933 18.8251 20.4852 20.0781 18.7402C21.3311 16.9952 22.0053 14.9012 22.0059 12.7529C22.0059 7.08819 17.4177 2.5 11.7529 2.5Z"
+                  />
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/@code" class="fill-darkModeText">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 25"
+                  class="size-6"
+                >
+                  <path
+                    xmlns="http://www.w3.org/2000/svg"
+                    d="M21.7999 8.23605C21.7074 7.47661 21.435 6.7502 21.0054 6.11715C20.751 5.83754 20.4419 5.61319 20.0972 5.45801C19.7525 5.30283 19.3796 5.22013 19.0016 5.21505C16.2026 4.99805 12.0044 4.99805 12.0044 4.99805H11.995C11.995 4.99805 7.79688 4.99805 4.99841 5.21505C4.62044 5.22017 4.24755 5.30289 3.90286 5.45806C3.55818 5.61324 3.24904 5.83757 2.99463 6.11715C2.56531 6.75035 2.29295 7.47668 2.20007 8.23605C2.07548 9.38272 2.00871 10.5349 2 11.6883V13.3063C2.00867 14.4599 2.07545 15.6123 2.20007 16.7592C2.29257 17.518 2.56498 18.2438 2.99463 18.8761C3.58854 19.4471 4.37604 19.7728 5.19971 19.7882C6.79956 19.9521 12 20.0028 12 20.0028C12 20.0028 16.2026 19.9953 19.0016 19.7808C19.3796 19.7748 19.7524 19.6915 20.0969 19.536C20.4415 19.3805 20.7507 19.1562 21.0054 18.8768C21.4347 18.2444 21.7071 17.5187 21.7999 16.76C21.9245 15.613 21.9913 14.4605 22 13.3068V11.6889C21.9913 10.5353 21.9245 9.38292 21.7999 8.23605ZM9.50232 16.2517V8.74923L15.7543 12.5004L9.50232 16.2517Z"
+                  />
+                </svg>
+              </a>
+            </div>
+            <a
+              href="https://www.microsoft.com/en-in/"
+              class="fill-darkModeText"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 23 24"
+                class="size-6"
+              >
+                <path d="M1 1.5H11V11.5H1V1.5Z" />
+                <path d="M12 1.5H22V11.5H12V1.5Z" />
+                <path d="M1 12.5H11V22.5H1V12.5Z" />
+                <path d="M12 12.5H22V22.5H12V12.5Z" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="flex gap-5 items-center">
+            <a
+              href="https://support.serviceshub.microsoft.com/supportforbusiness/create?sapId=d66407ed-3967-b000-4cfb-2c318cad363d"
+              class="text-xs font-medium"
+              >Support</a
+            >
+            <a
+              href="https://go.microsoft.com/fwlink/?LinkId=521839"
+              class="text-xs font-medium"
+              >Privacy</a
+            >
+            <a
+              href="https://www.microsoft.com/legal/terms-of-use"
+              class="text-xs font-medium"
+              >Terms of Use</a
+            >
+            <a
+              href="https://code.visualstudio.com/License"
+              class="text-xs font-medium"
+              >License</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -22,9 +22,8 @@ module.exports = {
       xs: "600px",
       sm: "768px",
       md: "1024px",
-      lg: "1140px",
-      xl: "1280px",
-      "2xl": "1440px",
+      lg: "1170px",
+      xl: "1320px",
     },
     extend: {
       opacity: {

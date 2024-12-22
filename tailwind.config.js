@@ -19,7 +19,7 @@ module.exports = {
       darkBlue: "#005fb8",
     },
     screens: {
-      xs: "540px",
+      xs: "600px",
       sm: "768px",
       md: "1024px",
       lg: "1140px",

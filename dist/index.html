@@ -19,7 +19,7 @@
         class="w-full fixed left-0 top-0 bg-white dark:bg-bgBlack border-b z-50 border-b-transparent flex items-center justify-center"
       >
         <div
-          class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 lg:flex hidden items-center justify-between gap-5 h-15"
+          class="w-full xl:max-w-screen-xl px-5 lg:flex hidden items-center justify-between gap-5 h-15"
         >
           <div class="flex items-center gap-6">
             <a href="index.html" class="flex items-center gap-3">
@@ -70,8 +70,7 @@
 
           <div class="flex items-center gap-2">
             <button
-              id="dark-mode-btn"
-              class="p-1.5 hover:bg-black/6 dark:hover:bg-white/10 rounded hidden"
+              class="dark-mode-btn p-1.5 hover:bg-black/6 dark:hover:bg-white/10 fill-lightModeText dark:fill-darkModeText rounded hidden"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -85,13 +84,12 @@
             </button>
 
             <button
-              id="light-mode-btn"
-              class="p-1.5 hover:bg-black/6 dark:hover:bg-white/10 rounded hidden"
+              class="light-mode-btn p-1.5 hover:bg-black/6 dark:hover:bg-white/10 fill-lightModeText dark:fill-darkModeText rounded hidden"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
-                class="size-[18px]"
+                class="size-5"
               >
                 <path
                   d="M7.61731 3.0153C10.0919 3.21621 12.0398 5.37119 12.0398 8C12.0398 10.7614 9.89041 13 7.23897 13C5.55415 13 4.0713 12.0961 3.21428 10.7271C4.56165 10.3479 6.39833 9.42526 7.20834 7.17555C7.73903 5.70162 7.76926 4.23763 7.61731 3.0153ZM13 8C13 4.68629 10.4207 2 7.23897 2C7.17126 2 7.10381 2.00122 7.03662 2.00364C6.89672 2.00867 6.76589 2.07706 6.67841 2.19089C6.59093 2.30471 6.55551 2.45263 6.58142 2.59591C6.80109 3.81021 6.84948 5.32413 6.3093 6.82444C5.54115 8.95787 3.61893 9.66359 2.39426 9.89533C2.24674 9.92325 2.12022 10.0213 2.05222 10.1605C1.98422 10.2997 1.98255 10.4639 2.04771 10.6046C2.97816 12.6128 4.95255 14 7.23897 14C10.4207 14 13 11.3137 13 8Z"
@@ -99,10 +97,7 @@
               </svg>
             </button>
 
-            <form
-              id="search-form"
-              class="xl:flex hidden items-center gap-2 relative"
-            >
+            <form id="search-form" class="flex items-center gap-2 relative">
               <input
                 type="text"
                 id="search-input"
@@ -132,52 +127,142 @@
           </div>
         </div>
 
-        <div
-          id="mobile-header"
-          class="w-full sm:px-10 px-5 lg:hidden flex items-center justify-between gap-5 h-15"
-        >
-          <a href="index.html" class="flex items-center gap-3">
-            <img
-              src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1734846716/vscode/vscode-logo.webp"
-              alt="Visual Studio Code"
-              class="xl:size-6 size-5"
-            />
-            <span
-              class="text-lightModeHeading dark:text-darkModeHeading xl:text-xl text-lg font-semibold"
-              >Visual Studio Code</span
-            >
-          </a>
-
-          <div class="flex items-center justify-center">
-            <button
-              id="popup-open"
-              class="bg-black/1 dark:bg-white/7 rounded p-1.5"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-                class="size-5"
+        <div id="mobile-header" class="w-full px-5 lg:hidden">
+          <div class="w-full flex items-center justify-between gap-5 h-15">
+            <a href="index.html" class="flex items-center gap-3">
+              <img
+                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1734846716/vscode/vscode-logo.webp"
+                alt="Visual Studio Code"
+                class="xl:size-6 size-5"
+              />
+              <span
+                class="text-lightModeHeading dark:text-darkModeHeading xl:text-xl text-lg font-semibold"
+                >Visual Studio Code</span
               >
-                <path
-                  d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
-                />
-              </svg>
-            </button>
+            </a>
 
-            <button
-              id="popup-close"
-              class="bg-black/1 dark:bg-white/7 rounded p-1 hidden"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                class="size-6"
+            <div class="flex items-center justify-center">
+              <button
+                id="popup-open"
+                class="bg-black/1 dark:bg-white/7 rounded p-1.5"
               >
-                <path
-                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                ></path>
-              </svg>
-            </button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  class="size-5"
+                >
+                  <path
+                    d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                  />
+                </svg>
+              </button>
+
+              <button
+                id="popup-close"
+                class="bg-black/1 dark:bg-white/7 rounded p-1 hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="size-6"
+                >
+                  <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="popup sm:px-0 px-3 w-full pt-2 pb-5 bg-white dark:bg-bgBlack sm:flex-row flex-col items-center justify-between gap-5 hidden"
+          >
+            <nav
+              class="sm:w-fit w-full flex sm:flex-row flex-col sm:gap-6 gap-4"
+            >
+              <a
+                href="https://code.visualstudio.com/docs"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >Docs</a
+              >
+              <a
+                href="https://code.visualstudio.com/updates"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >Updates</a
+              >
+              <a
+                href="https://code.visualstudio.com/blogs"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >Blog</a
+              >
+              <a
+                href="https://code.visualstudio.com/api"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >API</a
+              >
+              <a
+                href="https://marketplace.visualstudio.com/VSCode"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >Extensions</a
+              >
+              <a
+                href="https://code.visualstudio.com/docs/supporting/faq"
+                class="xl:text-base text-sm font-medium transition-all hover:text-lightModeHeading dark:hover:text-darkModeHeading"
+                >FAQ</a
+              >
+            </nav>
+
+            <div class="sm:w-fit w-full flex items-center gap-3">
+              <button
+                class="dark-mode-btn fill-lightModeText dark:fill-darkModeText hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  class="size-5"
+                >
+                  <path
+                    d="M8.0162 1C8.25723 1 8.45269 1.19588 8.45269 1.4375V2.3125C8.45269 2.55412 8.25723 2.75 8.0162 2.75C7.77514 2.75 7.57971 2.55412 7.57971 2.3125V1.4375C7.57971 1.19588 7.77514 1 8.0162 1ZM8.0162 11.5C9.94469 11.5 11.5081 9.93296 11.5081 8C11.5081 6.067 9.94469 4.5 8.0162 4.5C6.08767 4.5 4.5243 6.067 4.5243 8C4.5243 9.93296 6.08767 11.5 8.0162 11.5ZM8.0162 10.625C6.56981 10.625 5.39727 9.44979 5.39727 8C5.39727 6.55026 6.56981 5.375 8.0162 5.375C9.46263 5.375 10.6351 6.55026 10.6351 8C10.6351 9.44979 9.46263 10.625 8.0162 10.625ZM14.5635 8.4375C14.8045 8.4375 15 8.24159 15 8C15 7.75838 14.8045 7.5625 14.5635 7.5625H13.6905C13.4495 7.5625 13.2541 7.75838 13.2541 8C13.2541 8.24159 13.4495 8.4375 13.6905 8.4375H14.5635ZM8.0162 13.25C8.25723 13.25 8.45269 13.4459 8.45269 13.6875V14.5625C8.45269 14.8041 8.25723 15 8.0162 15C7.77514 15 7.57971 14.8041 7.57971 14.5625V13.6875C7.57971 13.4459 7.77514 13.25 8.0162 13.25ZM2.34186 8.4375C2.58292 8.4375 2.77835 8.24159 2.77835 8C2.77835 7.75838 2.58292 7.5625 2.34186 7.5625H1.43649C1.19542 7.5625 1 7.75838 1 8C1 8.24159 1.19542 8.4375 1.43649 8.4375H2.34186ZM2.90619 2.87814C3.07665 2.70728 3.35302 2.70728 3.52347 2.87814L4.39645 3.75314C4.56692 3.924 4.56692 4.201 4.39645 4.37186C4.22599 4.54272 3.94963 4.54272 3.77917 4.37186L2.90619 3.49686C2.73573 3.326 2.73573 3.049 2.90619 2.87814ZM3.52347 13.1219C3.35302 13.2927 3.07665 13.2927 2.90619 13.1219C2.73573 12.951 2.73573 12.674 2.90619 12.5031L3.77917 11.6281C3.94963 11.4573 4.22599 11.4573 4.39645 11.6281C4.56692 11.799 4.56692 12.076 4.39645 12.2469L3.52347 13.1219ZM13.1262 2.87814C12.9558 2.70728 12.6794 2.70728 12.5089 2.87814L11.6359 3.75314C11.4655 3.924 11.4655 4.201 11.6359 4.37186C11.8064 4.54272 12.0828 4.54272 12.2533 4.37186L13.1262 3.49686C13.2967 3.326 13.2967 3.049 13.1262 2.87814ZM12.5089 13.1219C12.6794 13.2927 12.9558 13.2927 13.1262 13.1219C13.2967 12.951 13.2967 12.674 13.1262 12.5031L12.2533 11.6281C12.0828 11.4573 11.8064 11.4573 11.6359 11.6281C11.4655 11.799 11.4655 12.076 11.6359 12.2469L12.5089 13.1219Z"
+                  />
+                </svg>
+              </button>
+
+              <button
+                class="light-mode-btn fill-lightModeText dark:fill-darkModeText hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  class="size-5"
+                >
+                  <path
+                    d="M7.61731 3.0153C10.0919 3.21621 12.0398 5.37119 12.0398 8C12.0398 10.7614 9.89041 13 7.23897 13C5.55415 13 4.0713 12.0961 3.21428 10.7271C4.56165 10.3479 6.39833 9.42526 7.20834 7.17555C7.73903 5.70162 7.76926 4.23763 7.61731 3.0153ZM13 8C13 4.68629 10.4207 2 7.23897 2C7.17126 2 7.10381 2.00122 7.03662 2.00364C6.89672 2.00867 6.76589 2.07706 6.67841 2.19089C6.59093 2.30471 6.55551 2.45263 6.58142 2.59591C6.80109 3.81021 6.84948 5.32413 6.3093 6.82444C5.54115 8.95787 3.61893 9.66359 2.39426 9.89533C2.24674 9.92325 2.12022 10.0213 2.05222 10.1605C1.98422 10.2997 1.98255 10.4639 2.04771 10.6046C2.97816 12.6128 4.95255 14 7.23897 14C10.4207 14 13 11.3137 13 8Z"
+                  />
+                </svg>
+              </button>
+
+              <a
+                href="https://code.visualstudio.com/Search"
+                class="fill-lightModeText dark:fill-darkModeText"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  class="size-[18px]"
+                >
+                  <path
+                    d="M9.27531 0C5.96189 0 3.27584 2.68606 3.27584 5.99947C3.27584 7.60086 3.90325 9.0557 4.92567 10.1316L0 15.0573L0.942726 16L5.94933 10.9934C6.90125 11.6286 8.04503 11.9989 9.27531 11.9989C12.5887 11.9989 15.2748 9.31289 15.2748 5.99947C15.2748 2.68606 12.5887 0 9.27531 0ZM4.60905 5.99947C4.60905 3.42237 6.69821 1.33322 9.27531 1.33322C11.8524 1.33322 13.9416 3.42237 13.9416 5.99947C13.9416 8.57658 11.8524 10.6657 9.27531 10.6657C6.69821 10.6657 4.60905 8.57658 4.60905 5.99947Z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="https://code.visualstudio.com/Download"
+                class="bg-buttonBlue text-darkModeHeading font-medium leading-none px-4 py-2 rounded transition-all hover:bg-hoverBlue"
+              >
+                Download
+              </a>
+            </div>
           </div>
         </div>
       </header>
@@ -185,7 +270,7 @@
       <!-- Announcement -->
       <div
         id="announcement"
-        class="w-full flex items-center justify-center px-4 pt-20 relative"
+        class="w-full hidden md:flex items-center justify-center px-4 pt-20 relative"
       >
         <p class="text-sm font-medium text-center leading-[0.85]">
           <a
@@ -212,22 +297,24 @@
       </div>
 
       <!-- Main -->
-      <main class="w-full relative">
+      <main class="w-full relative md:pt-0 pt-16">
         <section
           id="hero"
           class="w-full relative flex flex-col items-center bg-gradient-to-b from-white to-[#f8f8f884] dark:from-bgBlack dark:to-[#141414] border-b border-black/12 dark:border-white/12"
         >
           <div
-            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 flex items-center gap-10"
+            class="w-full xl:max-w-screen-xl px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 flex lg:flex-row flex-col items-center gap-10"
           >
-            <div class="xl:w-1/3 w-[35%] flex flex-col items-start gap-4">
+            <div
+              class="xl:w-[35%] lg:w-2/5 w-full flex flex-col lg:items-start items-center gap-4 lg:text-start text-center"
+            >
               <h3
-                class="bg-black/1 dark:bg-white/4 p-3 rounded-full border border-black/10 dark:border-white/7 text-sm font-medium leading-[0.85] text-nowrap"
+                class="bg-black/1 dark:bg-white/4 lg:p-3 p-2 rounded-full border border-black/10 dark:border-white/7 text-sm font-medium lg:leading-[0.85] lg:text-nowrap"
               >
                 Free. Built on open source. Runs everywhere.
               </h3>
               <h1
-                class="xl:text-[3.5rem] md:text-[2.9rem] text-4xl leading-tight font-semibold text-lightModeHeading dark:text-darkModeHeading"
+                class="xl:text-[3.5rem] md:text-[2.5rem] text-3xl leading-tight font-semibold text-lightModeHeading dark:text-darkModeHeading"
               >
                 Code Editing. Redefined.
               </h1>
@@ -271,7 +358,7 @@
               </p>
             </div>
 
-            <div class="xl:w-2/3 w-[65%]">
+            <div class="xl:w-[65%] lg:w-3/5 w-full">
               <img
                 src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1734846714/vscode/vscode-hero.webp"
                 alt="Visual Studio Code"
@@ -288,10 +375,10 @@
 
         <section class="w-full relative flex flex-col items-center">
           <div
-            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:py-24 md:py-20 py-15 relative flex gap-10"
+            class="w-full xl:max-w-screen-lg sm:px-10 px-5 xl:py-24 md:py-20 py-15 relative flex md:flex-row flex-col lg:items-start items-center gap-10"
           >
             <div
-              class="xl:w-1/3 w-[35%] flex flex-col items-start gap-4 xl:pr-10"
+              class="xl:w-[35%] lg:w-2/5 w-full flex flex-col items-start gap-4 xl:pr-10"
             >
               <h2
                 class="xl:text-3xl md:text-[1.65rem] text-2xl leading-snug font-semibold text-lightModeHeading dark:text-darkModeHeading"
@@ -306,7 +393,9 @@
               </p>
             </div>
 
-            <div class="xl:w-2/3 w-[65%] grid grid-cols-3 gap-y-2 gap-x-7">
+            <div
+              class="xl:w-[65%] lg:w-3/5 w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-3 grid-cols-2 gap-y-2 gap-x-7"
+            >
               <div class="flex items-center gap-2">
                 <img
                   class="size-10"
@@ -409,11 +498,9 @@
 
         <section class="w-full relative flex flex-col items-center">
           <div
-            class="w-full max-w-[1360px] lg:px-15 sm:px-10 px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 relative flex gap-10"
+            class="w-full max-w-[1320px] sm:px-10 px-5 xl:pt-12 md:pt-10 pt-7.5 xl:pb-24 md:pb-20 pb-15 relative flex gap-10"
           >
-            <div
-              class="xl:w-1/3 w-[35%] flex flex-col items-start gap-4 xl:pr-10"
-            >
+            <div class="w-[35%] flex flex-col items-start gap-4 xl:pr-10">
               <h2
                 class="xl:text-3xl md:text-[1.65rem] text-2xl leading-snug font-semibold text-lightModeHeading dark:text-darkModeHeading"
               >
@@ -432,9 +519,9 @@
             </div>
 
             <div
-              class="xl:w-2/3 w-[65%] relative flex flex-col items-center xl:gap-5 gap-3"
+              class="w-[65%] relative flex flex-col items-center xl:gap-5 gap-3"
             >
-              <div class="extensions w-full hidden xl:grid grid-cols-3 gap-4">
+              <div class="extensions w-full grid grid-cols-3 gap-4">
                 <a
                   href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"
                   class="flex gap-3 p-4 bg-black/1 dark:bg-white/4 rounded-md border border-black/10 dark:border-white/7 hover:border-black/20 dark:hover:border-white/20"
@@ -444,7 +531,7 @@
                     src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1734846720/vscode/vscode-python-extension.webp"
                     alt="Python"
                   />
-                  <div class="flex flex-col gap-1">
+                  <div class="xl:flex hidden flex-col gap-1">
                     <h3
                       class="font-semibold text-lightModeHeading dark:text-darkModeHeading"
                     >

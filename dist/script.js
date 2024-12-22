@@ -1,6 +1,6 @@
 const root = document.documentElement;
-const darkModeBtn = document.querySelector("#dark-mode-btn");
-const lightModeBtn = document.querySelector("#light-mode-btn");
+const darkModeBtns = document.querySelectorAll(".dark-mode-btn");
+const lightModeBtns = document.querySelectorAll(".light-mode-btn");
 const downloadBtn = document.querySelector("#download");
 const announcement = document.querySelector("#announcement");
 const closeAnnouncementBtn = document.querySelector("#close-announcement-btn");
@@ -9,7 +9,7 @@ const searchForm = document.querySelector("#search-form");
 const searchInput = searchForm.querySelector("input");
 const popupOpenBtn = document.querySelector("#popup-open");
 const popupCloseBtn = document.querySelector("#popup-close");
-const popup = document.querySelector("#popup");
+const popup = document.querySelector(".popup");
 
 let darkMode = true;
 
@@ -24,8 +24,8 @@ const osMap = {
 const toggleTheme = () => {
   darkMode = !darkMode;
   root.classList.toggle("dark", darkMode);
-  darkModeBtn.classList.toggle("hidden", !darkMode);
-  lightModeBtn.classList.toggle("hidden", darkMode);
+  darkModeBtns.forEach((btn) => btn.classList.toggle("hidden", !darkMode));
+  lightModeBtns.forEach((btn) => btn.classList.toggle("hidden", darkMode));
 };
 
 const setDownloadButtonText = () => {
@@ -54,8 +54,8 @@ const initTheme = () => {
 
   root.classList.toggle("dark", darkMode);
   darkMode
-    ? darkModeBtn.classList.remove("hidden")
-    : lightModeBtn.classList.remove("hidden");
+    ? darkModeBtns.forEach((btn) => btn.classList.remove("hidden"))
+    : lightModeBtns.forEach((btn) => btn.classList.remove("hidden"));
 };
 
 const handleScroll = () => {
@@ -69,13 +69,24 @@ const handleScroll = () => {
 };
 
 const initEventListeners = () => {
-  darkModeBtn.addEventListener("click", toggleTheme);
-  lightModeBtn.addEventListener("click", toggleTheme);
+  darkModeBtns.forEach((btn) => btn.addEventListener("click", toggleTheme));
+  lightModeBtns.forEach((btn) => btn.addEventListener("click", toggleTheme));
   closeAnnouncementBtn.addEventListener("click", () => {
     announcement.style.visibility = "hidden";
   });
   document.addEventListener("scroll", handleScroll);
   searchForm.addEventListener("submit", handleSearchSubmit);
+  popupOpenBtn.addEventListener("click", () => {
+    popupOpenBtn.classList.toggle("hidden");
+    popupCloseBtn.classList.toggle("hidden");
+    popup.classList.replace("hidden", "flex");
+  });
+
+  popupCloseBtn.addEventListener("click", () => {
+    popupCloseBtn.classList.toggle("hidden");
+    popupOpenBtn.classList.toggle("hidden");
+    popup.classList.replace("flex", "hidden");
+  });
 };
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -86,14 +97,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
   setDownloadButtonText();
   initEventListeners();
-});
-
-popupOpenBtn.addEventListener("click", () => {
-  popupOpenBtn.classList.toggle("hidden");
-  popupCloseBtn.classList.toggle("hidden");
-});
-
-popupCloseBtn.addEventListener("click", () => {
-  popupCloseBtn.classList.toggle("hidden");
-  popupOpenBtn.classList.toggle("hidden");
 });

@@ -18,6 +18,14 @@ module.exports = {
       hoverBlue: "#0069b9",
       darkBlue: "#005fb8",
     },
+    screens: {
+      xs: "540px",
+      sm: "768px",
+      md: "1024px",
+      lg: "1140px",
+      xl: "1280px",
+      "2xl": "1440px",
+    },
     extend: {
       opacity: {
         1: "0.01",

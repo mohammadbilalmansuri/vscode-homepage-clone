@@ -29,7 +29,7 @@ const changeTheme = (isDarkMode) => {
     }"/></svg>
   `;
   darkMode = isDarkMode;
-  localStorage.setItem("darkMode", String(darkMode));
+  localStorage.setItem("darkMode", String(isDarkMode));
 };
 
 const setDownloadButtonText = () => {

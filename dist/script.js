@@ -13,7 +13,7 @@
   const popup = document.getElementById("popup");
 
   let darkMode = true;
-
+  const userAgent = navigator.userAgent;
   const osMap = {
     Win: "Windows",
     Mac: "MacOS",
@@ -36,9 +36,7 @@
   };
 
   const setDownloadButtonText = () => {
-    const os = Object.keys(osMap).find((key) =>
-      navigator.userAgent.includes(key)
-    );
+    const os = Object.keys(osMap).find((key) => userAgent.includes(key));
     downloadBtn.innerText = osMap[os]
       ? `Download for ${osMap[os]}`
       : "Download";
@@ -56,7 +54,6 @@
 
   const initTheme = () => {
     const storedDarkMode = localStorage.getItem("darkMode");
-
     changeTheme(
       storedDarkMode
         ? storedDarkMode === "true"
@@ -65,39 +62,42 @@
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 0) {
-      header.classList.add("border-b-black/10", "dark:border-b-white/10");
-      header.classList.remove("border-b-transparent");
-    } else {
-      header.classList.add("border-b-transparent");
-      header.classList.remove("border-b-black/10", "dark:border-b-white/10");
-    }
+    const hasScrolled = window.scrollY > 0;
+    header.classList.toggle("border-b-black/10", hasScrolled);
+    header.classList.toggle("dark:border-b-white/10", hasScrolled);
+    header.classList.toggle("border-b-transparent", !hasScrolled);
   };
 
   const togglePopup = () => {
-    popup.classList.toggle("hidden");
-    popup.classList.toggle("flex");
+    const isHidden = popup.classList.toggle(
+      "hidden",
+      popup.classList.contains("flex")
+    );
+    popup.classList.toggle("flex", !isHidden);
+    popupBtn.innerHTML = isHidden
+      ? `<svg viewBox="0 0 448 512" class="size-5"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>`
+      : `<svg viewBox="0 0 24 24" class="size-6"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></svg>`;
+  };
 
-    if (popup.classList.contains("hidden")) {
-      popupBtn.innerHTML = `<svg viewBox="0 0 448 512" class="size-5"><path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/></svg>`;
-    } else {
-      popupBtn.innerHTML = `<svg viewBox="0 0 24 24" class="size-6"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></svg>`;
-    }
+  const debounce = (fn, delay) => {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn(...args), delay);
+    };
   };
 
   const initEventListeners = () => {
-    themeBtn.addEventListener("click", () => {
-      changeTheme(!darkMode);
-    });
+    themeBtn.addEventListener("click", () => changeTheme(!darkMode));
     closeAnnouncementBtn.addEventListener("click", () => {
       announcement.style.visibility = "hidden";
     });
-    document.addEventListener("scroll", handleScroll);
+    document.addEventListener("scroll", debounce(handleScroll, 50));
     searchForm.addEventListener("submit", handleSearchSubmit);
     popupBtn.addEventListener("click", togglePopup);
   };
 
-  window.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     initTheme();
     setDownloadButtonText();
     initEventListeners();

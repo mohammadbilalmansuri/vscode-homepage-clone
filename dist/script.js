@@ -22,6 +22,9 @@
     "like Mac": "iOS",
   };
 
+  const os = Object.keys(osMap).find((key) => userAgent.includes(key));
+  downloadBtn.innerText = osMap[os] ? `Download for ${osMap[os]}` : "Download";
+
   const changeTheme = (isDarkMode) => {
     root.classList.toggle("dark", isDarkMode);
     themeBtn.innerHTML = `
@@ -35,12 +38,12 @@
     localStorage.setItem("darkMode", String(isDarkMode));
   };
 
-  const setDownloadButtonText = () => {
-    const os = Object.keys(osMap).find((key) => userAgent.includes(key));
-    downloadBtn.innerText = osMap[os]
-      ? `Download for ${osMap[os]}`
-      : "Download";
-  };
+  const storedDarkMode = localStorage.getItem("darkMode");
+  changeTheme(
+    storedDarkMode
+      ? storedDarkMode === "true"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -50,15 +53,6 @@
     )}`;
     window.open(searchUrl, "_blank");
     searchInput.value = "";
-  };
-
-  const initTheme = () => {
-    const storedDarkMode = localStorage.getItem("darkMode");
-    changeTheme(
-      storedDarkMode
-        ? storedDarkMode === "true"
-        : window.matchMedia("(prefers-color-scheme: dark)").matches
-    );
   };
 
   const handleScroll = () => {
@@ -87,19 +81,11 @@
     };
   };
 
-  const initEventListeners = () => {
-    themeBtn.addEventListener("click", () => changeTheme(!darkMode));
-    closeAnnouncementBtn.addEventListener("click", () => {
-      announcement.style.visibility = "hidden";
-    });
-    document.addEventListener("scroll", debounce(handleScroll, 50));
-    searchForm.addEventListener("submit", handleSearchSubmit);
-    popupBtn.addEventListener("click", togglePopup);
-  };
-
-  document.addEventListener("DOMContentLoaded", () => {
-    initTheme();
-    setDownloadButtonText();
-    initEventListeners();
+  themeBtn.addEventListener("click", () => changeTheme(!darkMode));
+  closeAnnouncementBtn.addEventListener("click", () => {
+    announcement.style.visibility = "hidden";
   });
+  document.addEventListener("scroll", debounce(handleScroll, 50));
+  searchForm.addEventListener("submit", handleSearchSubmit);
+  popupBtn.addEventListener("click", togglePopup);
 })();
